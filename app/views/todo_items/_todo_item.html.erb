@@ -1,5 +1,30 @@
-<p>
-  <%= todo_item.content %>
-</p>
+<div class="row clearfix">
+  <% if todo_item.completed? %>
 
-<%= link_to "刪除", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %>
+    <div class="complete">
+      <%= link_to "完成任務", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+    </div>
+    <div class="todo_item">
+      <p style="opacity: 0.3;">
+      <strike>
+        <%= todo_item.content %>
+      </strike></p>
+    </div>
+
+    <div class="trash">
+      <%= link_to "刪除", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %> 
+    </div>
+
+  <% else %>
+
+    <div class="complete">
+      <%= link_to "完成任務", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+    </div>
+    <div class="todo_item">
+      <p><%= todo_item.content %></p>
+    </div>
+    <div class="trash">
+      <%= link_to "刪除任務", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %> 
+    </div>
+  <% end %>
+</div>
