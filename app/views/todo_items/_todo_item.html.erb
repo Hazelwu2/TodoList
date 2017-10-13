@@ -1,0 +1,5 @@
+<p>
+  <%= todo_item.content %>
+</p>
+
+<%= link_to "刪除", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %>
