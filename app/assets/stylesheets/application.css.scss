@@ -156,6 +156,7 @@ a {
   .complete {
     width: 10%;
     padding: 1em 0;
+    padding-top: 22px;
     border-right: 1px solid darken($translucent-white, 50%);
     @extend .text-center;
   }
@@ -165,13 +166,16 @@ a {
     text-align: left;
     p {
       padding: 1em;
+      padding-top: 22px;
       color: #7e7e7e;
+      font-size: 18px;
     }
   }
   .todo_time {
     width: 30%;
     display: inline-block;
     padding: 1em;
+    padding-top: 1.5em;
     p {
       font-size: 0.8rem;
       color: #7e7e7e;
@@ -180,6 +184,7 @@ a {
   .trash {
     width: 10%;
     padding: 1em 0;
+    padding-top: 22px;
     border-left: 1px solid darken($translucent-white, 50%);
     @extend .text-center;
   }
