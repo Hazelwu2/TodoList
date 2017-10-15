@@ -1,6 +1,7 @@
 # ToDoList 待辦事項 APP 功能
 <br>
  ![image](https://github.com/Hazelwu2/TodoList/raw/master/app/assets/images/todolist.png)
+ (http://github.com/hazelwu2/TodoList/raw/master/images/todolist.png)
 1.使用者可以看到一張 to do 清單，清單上呈現了 to do 的資訊<br>
 2.使用者能在 to do清單上很方便地選擇要刪除、修改、或去看詳細的內容<br>
 3.如果 due date 已經過期，就不能再刪除 todo 了 <br>
