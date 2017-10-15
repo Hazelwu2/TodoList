@@ -1,31 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <h1 class="title">待做事項任務表</h1>
+  <p>做一個優秀的時間管理者吧！</p>
+</div>
 
-<h1>Todo Lists</h1>
+<% @todo_lists.each do |todo_list| %>
+  <div class="index_row clearfix">
+    <h2 class="todo_list_title"> <%= link_to todo_list.name, todo_list %> </h2>
+    <p class="todo_list_sub_title"><%= todo_list.note %></p>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Duedate</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<hr>
+<div class="links">
+  <%= link_to "新增任務", new_todo_list_path, class: 'btn' %>
 
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.name %></td>
-        <td><%= todo_list.duedate %></td>
-        <td><%= todo_list.note %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
 
-<br>
-
-<%= link_to 'New Todo List', new_todo_list_path %>

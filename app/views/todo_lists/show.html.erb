@@ -1,25 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <h1 class="title"><%= @todo_list.name %></h1>
+  <p><%= @todo_list.note %></p>
+  <p>預計完成日期：<%= @todo_list.duedate %></p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @todo_list.name %>
-</p>
-
-<p>
-  <strong>Duedate:</strong>
-  <%= @todo_list.duedate %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @todo_list.note %>
-</p>
-
-<div id="todo_items_wrapper">
-  <%= render @todo_list.todo_items %>
-  <div id="form">
-    <%= render "todo_items/form" %>
+<div id="todo-items-wrapper">
+  <div class="row">
+    <%= render @todo_list.todo_items %>
+      <div id="form">
+        <%= render "todo_items/form" %>
+      </div>
+  
+    <div class="links">
+    <%= link_to '編輯任務', edit_todo_list_path(@todo_list) %> 
+    |
+      <%= link_to '刪除任務', todo_list_path(@todo_list), method: :delete, data: {confirm: "確定要刪除嗎？半途而廢這樣好嗎？"} %>
+    |
+    <%= link_to '回上一頁', todo_lists_path %>
+    </div>
   </div>
 </div>
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>

@@ -2,7 +2,9 @@
   <% if todo_item.completed? %>
 
     <div class="complete">
-      <%= link_to "完成任務", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+      <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+        <i class="fa fa-check" style="opacity: 0.4;"></i>
+      <% end %>
     </div>
     <div class="todo_item">
       <p style="opacity: 0.3;">
@@ -12,19 +14,25 @@
     </div>
 
     <div class="trash">
-      <%= link_to "刪除", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %> 
+      <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} do %>
+        <i class="fa fa-trash" style="opacity: 0.4;"></i>
+      <% end %> 
     </div>
 
   <% else %>
 
     <div class="complete">
-      <%= link_to "完成任務", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+      <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+        <i class="fa fa-check"></i>
+      <% end %>
     </div>
     <div class="todo_item">
       <p><%= todo_item.content %></p>
     </div>
     <div class="trash">
-      <%= link_to "刪除任務", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} %> 
+      <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "您確定要刪除嗎？"} do %>
+        <i class="fa fa-trash"></i>
+      <% end %> 
     </div>
   <% end %>
 </div>

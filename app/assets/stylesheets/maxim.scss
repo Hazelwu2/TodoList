@@ -1,0 +1,20 @@
+@mixin font-smoothing($val: antialiased){
+  -moz-osx-font-smoothing: $val;
+   -webkit-font-smoothing: $val;
+      -moz-font-smoothing: $val;
+       -ms-font-smoothing: $val;
+        -o-font-smoothing: $val;
+}
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}

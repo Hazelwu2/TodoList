@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+html,
+body,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0; }
+
+/*variable*/
+html {
+  min-height: 100%; }
+
+body {
+  height: 100%;
+  background-color: #E6F7FE;
+  background-image: -webkit-linear-gradient(-310deg, #E6F7FE 10%, #67CCFA 100%);
+  background-image: -webkit-linear-gradient(50deg,#E6F7FE 10%, #67CCFA 100%);
+  background-image: -o-linear-gradient(50deg,#E6F7FE 10%, #67CCFA 100%);
+  background-image: linear-gradient(40deg,#E6F7FE 10%, #67CCFA 100%);
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.text-center, .container {
+  text-align: center; }
+
+a {
+  text-decoration: none;
+  color: #67BCF9;
+  -webkit-transition: all .3s easy-in-out;
+  -o-transition: all .3s easy-in-out;
+  transition: all .3s easy-in-out; }
+  a:hover {
+    opacity: 0.4; }
+
+.no-pm, .index_row {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  max-width: 750px;
+  margin: 5em auto;
+  -webkit-box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.5); }
+
+.wrapper {
+  padding: 2em;
+  letter-spacing: 2px;
+  font-weight: 300;
+  background-color: #67BCF9;
+  background-image: -webkit-linear-gradient(-370deg, #67BCF9 15%, #6AEDFC 100%);
+  background-image: -webkit-linear-gradient(350deg,#67BCF9 15%, #6AEDFC 100%);
+  background-image: -o-linear-gradient(350deg,#67BCF9 15%, #6AEDFC 100%);
+  background-image: linear-gradient(100deg,#67BCF9 15%, #6AEDFC 100%); }
+  .wrapper .title {
+    color: #fff; }
+  .wrapper p {
+    letter-spacing: 1px; }
+
+.links {
+  padding: 30px;
+  letter-spacing: 2px; }
+
+.index_row {
+  margin-bottom: 1rem; }
+  .index_row .todo_list_title {
+    margin: 1rem auto;
+    background: transparent; }
+  .index_row .todo_list_sub_title {
+    color: #7e7e7e; }

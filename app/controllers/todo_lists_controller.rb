@@ -4,7 +4,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = TodoList.all.order("created_at DESC")
   end
 
   # GET /todo_lists/1
@@ -51,14 +51,31 @@ class TodoListsController < ApplicationController
     end
   end
 
+  def mark_complete
+    if @todo_list.complete.nil?
+      @todo_list.complete = Time.now
+      @todo_list.move_to_bottom
+    else
+      @todo_list.complete = nil
+    end
+  end
   # DELETE /todo_lists/1
   # DELETE /todo_lists/1.json
+
+
   def destroy
-    @todo_list.destroy
-    respond_to do |format|
-      format.html { redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.' }
-      format.json { head :no_content }
+    
+    if @todo_list.duedate >= Date.today
+      @todo_list.destroy
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to @todo_list, notice: "TodoList無法刪除，已超過完成日期！"
     end
+
+    
   end
 
   private
