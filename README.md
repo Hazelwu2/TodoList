@@ -1,7 +1,7 @@
 # ToDoList 待辦事項 APP 功能
 <br>
  
- http://github.com/Hazelwu2/TodoList/raw/master/todolist.png
+ ![todolist](http://github.com/Hazelwu2/TodoList/raw/master/todolist.png)
 
  <br>
 1.使用者可以看到一張 to do 清單，清單上呈現了 to do 的資訊<br>
