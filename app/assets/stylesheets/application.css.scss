@@ -45,6 +45,19 @@ body {
 }
 
 
+#notice {
+  text-align: center;
+  font-size: 1.2em;
+  color: $link;
+}
+#error_explanation {
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.actions {
+  margin-bottom: 10px;
+}
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -60,9 +73,11 @@ body {
 }
 
 a {
+  display: inline-block;
+  margin-bottom: 15px;
   text-decoration: none;
   color: $link;
-  transition: all .3s easy-in-out;
+  transition: all .3s;
   &:hover {
     opacity: 0.4;
   }
@@ -96,6 +111,8 @@ a {
   p {
     letter-spacing: 1px;
   }
+
+
 }
 
 .links {
@@ -107,15 +124,22 @@ a {
   margin-bottom: 1rem;
   box-shadow: 0px 0px 4px #7e7e7e;
   padding-bottom: 1em;
+  border-left: 7px solid #67BCF9;
   @extend .no-pm;
 
   .todo_list_title {
     margin: 1rem auto;
     background: transparent;
+    a {
+      @extend .no-pm;
+    }
   }
 
-  .todo_list_sub_title {
+  .todo_list_sub_title, .todo_list_time {
     color: #7e7e7e;
+  }
+  .todo_list_time {
+    font-size: 0.8em;
   }
 
 }
@@ -126,7 +150,7 @@ a {
     border-top: 1px solid darken($translucent-white, 50%);
     border-bottom: 1px solid darken($translucent-white, 50%);
   }
-  .complete, .todo_item, .trash {
+  .complete, .todo_item, .trash, .todo_time {
     float: left;
   }
   .complete {
@@ -137,14 +161,22 @@ a {
   }
 
   .todo_item {
-    width: 80%;
+    width: 50%;
     text-align: left;
     p {
       padding: 1em;
       color: #7e7e7e;
     }
   }
-
+  .todo_time {
+    width: 30%;
+    display: inline-block;
+    padding: 1em;
+    p {
+      font-size: 0.8rem;
+      color: #7e7e7e;
+    }
+  }
   .trash {
     width: 10%;
     padding: 1em 0;
@@ -197,6 +229,13 @@ input[type="text"], textarea {
   border-radius: 4px;
   padding: 1em 2em;
 }
+
+input[type="submit"] {
+  color: #67BCF9;
+  border: none;
+  background: none;
+  font-size: 1em;
+}
 textarea {
   height: 200px;
 }
@@ -205,3 +244,7 @@ label {
   color: $link;
 }
 
+.field {
+  text-align: left;
+  padding: 1% 5%;
+}

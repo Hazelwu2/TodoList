@@ -1,17 +1,18 @@
-<p id="notice"><%= notice %></p>
+
 <div class="wrapper">
   <h1 class="title"><%= @todo_list.name %></h1>
   <p><%= @todo_list.note %></p>
   <p>預計完成日期：<%= @todo_list.duedate %></p>
 </div>
-
+<p id="notice"><%= notice %></p>
 <div id="todo-items-wrapper">
   <div class="row">
     <%= render @todo_list.todo_items %>
       <div id="form">
         <%= render "todo_items/form" %>
+
       </div>
-  
+    
     <div class="links">
     <%= link_to '編輯任務', edit_todo_list_path(@todo_list) %> 
     |
